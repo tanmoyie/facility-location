@@ -26,9 +26,11 @@ def solve(I, J, p, d_ij, N):
 
     obj = quicksum(p[i] * (z[i]) for i in I)
     mdl.setObjective(obj, sense=GRB.MAXIMIZE)
+    # add constraints
+    # Constraint1 what it is doing?
+    C_capacity = mdl.addConstrs((quicksum((d_ij[i, j] * x[j]) for j in J) >= z[i] for i in I), name='capacity')
 
-    mdl.addConstrs(quicksum((d_ij[i, j] * x[j]) for j in J) >= z[i] for i in I)
-    mdl.addConstr(quicksum((x[j]) for j in J) == N)
+    C_max_facility = mdl.addConstr(quicksum((x[j]) for j in J) == N, name='max_facility')
 
     lpfile = mdl.write(mdl.lp)
     mdl.optimize()
