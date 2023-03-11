@@ -1,8 +1,9 @@
 """ Filename: data_preparation.py
 
 Outline:
-Create customer and facility points
+Create dataset of customer and facility points (to be used by model)
 
+Date: March 2023
 
 """
 
