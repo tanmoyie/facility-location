@@ -50,9 +50,9 @@ def data_prep(data_demand):
     facility = add_geocoordinates(facility)
 
     # Facility
-    facility['fac_cor'] = facility['latitude'].astype(str) + ',' + facility['longitude'].astype(str)
+    facility['facility_coord'] = facility['latitude'].astype(str) + ',' + facility['longitude'].astype(str)
     facility['warehouse_id'] = ['Warehouse ' + str(i) for i in range(1, 1 + facility.shape[0])]
     # Customer
-    customer_df['cus_cor'] = customer_df['latitude'].astype(str) + ',' + customer_df['longitude'].astype(str)
+    customer_df['customer_coord'] = customer_df['latitude'].astype(str) + ',' + customer_df['longitude'].astype(str)
     customer_df['customer_id'] = range(1, 1 + customer_df.shape[0])
     return facility, customer_df

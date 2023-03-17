@@ -11,6 +11,7 @@ import geopandas
 
 # %% Plot customer and warehouse
 def draw_initial_customer_demand(AllSt, facility, customer_df):
+    # USA regions
     west = AllSt[AllSt['State_Code'].isin(['WA', 'OR', 'CA', 'ID', 'UT', 'MT', 'WY', 'CO', 'NV'])]
     southwest = AllSt[AllSt['State_Code'].isin(['AZ', 'NM', 'TX', 'OK'])]
     midwest = AllSt[AllSt['State_Code'].isin(['ND', 'SD', 'NE', 'KS', 'MN', 'IA', 'MO', 'WI', 'IL', 'MI', 'IN', 'OH'])]
@@ -24,10 +25,19 @@ def draw_initial_customer_demand(AllSt, facility, customer_df):
     southeast.plot(ax=us_boundary_map, color="Plum")
     midwest.plot(ax=us_boundary_map, color="PaleTurquoise")
     final_map = northeast.plot(ax=us_boundary_map, color="LightPink")
-    customer_df.plot(ax=us_boundary_map, marker='*', color='blue', markersize=10, alpha=0.8, label='Customer')
+
+    # customer
+    customer_df.plot(ax=us_boundary_map, marker='o', color='blue', markersize=50, alpha=0.1, label='Customer')
 
     # Plot potential facility locations as points
-    facility.plot(ax=us_boundary_map, marker='p', color='red', markersize=120, alpha=0.9, label='Warehouse')
+    facility.plot(ax=us_boundary_map, marker='p', color='red', markersize=500, alpha=1, label='Warehouse')
+
+    for i in range(facility.shape[0]):
+        plt.text(x=facility.longitude[i]-1, y=facility.latitude[i]-1,
+                 s=facility.index[i] + 1,
+                 fontdict=dict(color='black', size=15))
+    plt.axis('off')
+
     # Add legend
     plt.legend(facecolor='white', title='Locations')
     # Add title

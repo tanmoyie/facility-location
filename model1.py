@@ -33,12 +33,12 @@ def solve(I, J, p, d_ij, N):
     # Objective
     obj = quicksum(p[i] * (z[i]) for i in I)
     mdl.setObjective(obj, sense=GRB.MAXIMIZE)
-    lpfile = mdl.write(mdl.lp)
-
+    lpfile = 0  # mdl.write(mdl.lp)
+    mdl.write('Outputs/model1.lp')
     # Run the model
     mdl.optimize()
-    logfile = mdl.write(mdl.log)
-    attrfile = mdl.write(mdl.attr)
+    mdl.Params.LogFile = f"Outputs/model1.log"  # write the log file
+    attrfile = mdl.write("Outputs/model1.attr")
 
     # %% Decision to open or close warehouse
     decision = []
@@ -51,4 +51,4 @@ def solve(I, J, p, d_ij, N):
 
     decision_df = pd.DataFrame(decision, columns=["decisions"])
 
-    return lpfile, logfile, attrfile, decision_df
+    return lpfile, attrfile, decision_df

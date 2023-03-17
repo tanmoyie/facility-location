@@ -1,0 +1,6 @@
+ID,Name,State,Population,Geometry
+Warehouse 1,Chicago,IL,2781116,POINT (-87.6471 41.7565)
+Warehouse 2,San Francisco,CA,871042,POINT (-122.442 37.7669)
+Warehouse 3,Atlanta,GA,464043,POINT (-84.3949 33.7486)
+Warehouse 4,New York,NY,8691599,POINT (-74.0101 40.7106)
+Warehouse 5,Dallas,TX,1323651,POINT (-96.7958 32.7786)
