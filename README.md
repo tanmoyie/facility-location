@@ -6,8 +6,8 @@ We have five facilities to serve customers. We have two business problem to solv
 1. We are facing budget-cut. Which facility should be closed?
 2. Where should we build an additional facility to minimize travel time (when we have extra budget)?
 
-![image](https://user-images.githubusercontent.com/19787712/224388047-a00fcf01-3ade-40d4-be6a-aa546e94a281.png)
-Figure 1. Geolocation of existing facilities & customer demands: Green dots are 
+![facility location initial image2](https://user-images.githubusercontent.com/19787712/225813903-d9a25168-7c5f-4f36-b86a-98c84f7d3b0b.png)
+Figure 1. Geolocation of existing facilities & customer demands
 
 # Action
 Develop optimization model using mathematical programming from #OperationsResearch.
