@@ -1,5 +1,5 @@
 ### Facility location
-A collaborative AI-powered data science project to solve facility-location optimization problem (ongoing). Please see our Medium blog for more details.
+A collaborative AI-powered data science project to solve facility-location optimization problem (ongoing). Please see our [Medium blog]([url](https://medium.com/p/aaa45ead9f71/edit)) for more details.
 
 # Situation
 We have five facilities to serve customers. We have two business problem to solve. 
